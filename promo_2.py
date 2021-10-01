@@ -14,7 +14,7 @@ import matplotlib.dates as mdates
 # https://github.com/PablocFonseca/streamlit-aggrid
 
 
-def visualize(data):
+def app(data,data_whs):
     #data_df = preprocess_data(load_metadata_forecast())
 
 

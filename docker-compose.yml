@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  promotracker:
+    image: promotracker
+    build:
+      context: .
+      dockerfile: ./Dockerfile
