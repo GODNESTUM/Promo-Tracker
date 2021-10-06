@@ -154,13 +154,13 @@ def main():
 
     if page == promo_1:
         df = page.app(promodb,dim_partner, dim_product,fact_basesrp)
-        csv = convert_df(df)
-        st.download_button(
-         label="Download data as CSV",
-         data=csv,
-         file_name='large_df.csv',
-         mime='text/csv',
-     )
+    #     csv = convert_df(df)
+    #     st.download_button(
+    #      label="Download data as CSV",
+    #      data=csv,
+    #      file_name='large_df.csv',
+    #      mime='text/csv',
+    #  )
     elif page == promo_x_copy:
         df = page.app(promodb,dim_partner, dim_product,fact_basesrp)
     

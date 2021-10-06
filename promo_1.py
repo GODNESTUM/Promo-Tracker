@@ -295,16 +295,16 @@ def app(promodb,dim_partner, dim_product,fact_basesrp):
                        
             if st.session_state.checking:
                 last = promodb.query(quer(["added_by"],[st.session_state.sb_user])).reset_index().copy()
-                last["period_start"] = last["period_start"].apply(datetime.date)
-                last["period_end"] = last["period_end"].apply(datetime.date)
+                # last["period_start"] = last["period_start"].apply(datetime.date)
+                # last["period_end"] = last["period_end"].apply(datetime.date)
                 last = last.sort_values(["period_end"], ascending = False).reset_index(drop = True)
                 last.rename(columns = {"ips_project_title":"Franchise"},inplace = True)
                 st.dataframe(last)
                 #last = dim_product[(dim_product.period_start>start_period)&(dim_product.period_end<end_period)]
             else:
                 last = promodb.sort_values(["period_end"], ascending = False)[:10].reset_index(drop = True).copy()
-                last["period_start"] = last["period_start"].apply(datetime.date)
-                last["period_end"] =last["period_end"].apply(datetime.date)
+                # last["period_start"] = last["period_start"].apply(datetime.date)
+                # last["period_end"] =last["period_end"].apply(datetime.date)
                 #last["period_end"] =last["period_end"].dt.hour #if pd.to_datetime
                 last.rename(columns = {"ips_project_title":"Franchise"},inplace = True)
                 st.dataframe(last)
